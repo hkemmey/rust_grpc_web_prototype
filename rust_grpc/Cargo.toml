@@ -1,0 +1,25 @@
+[package]
+name = "rust_grpc"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]] #bin to run grpc server
+name = "helloworld-server"
+path = "src/server.rs"
+
+[[bin]] #bin to run grpc client
+name = "helloworld-client"
+path = "src/client.rs"
+
+[dependencies]
+tonic = "*"
+prost = "0.13"
+tokio = { version = "1.0", features = ["full"] }
+warp = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+hyper = { version = "0.14", features = ["full"] }
+tokio-stream = "0.1"
+
+[build-dependencies]
+tonic-build = "*"
